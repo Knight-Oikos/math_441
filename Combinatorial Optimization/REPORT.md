@@ -179,7 +179,9 @@ This approach gave us the following roster.
 The third approach was one uniquely created by us. The best players in the league for a given statistic are awarded at the end of the season. In the 2022-2023 season, Joel Embiid was the points leader with 33.1 points per game. Damonta Sabonis led the league with 12.3 rebounds per game. James Harden was the assists leader with 10.7 assists per game. Lastly, Nikola Jokic, an MVP calibre player, was the league leader in win shares with 14.9 win shares per game. Win shares is defined as a measure of a player's individual contribution to his team's wins \cite{winshares}. The objective function minimizes the absolute difference between the chosen players stats compared to the league leaders. The weight of the individual stat is equal since we are looking for the most balanced players and avoid the extreme cases where players only scores and does not defend for example. The objective function is defined as follows:
 
 $$\text{Min } (|33.1 - PTS| + |12.3 - REB| + |10.7 - AST| + |14.9 - WS|)^T \mathbf{x} $$
-$$\text{ with the constraint } A\mathbf{x}\geq b$$ 
+
+$$\text{ with the constraint } Ax \geq b$$ 
+
 using the constraints mentioned in equation (1).
 
 This approach is simply the L1 norm of players ‘distance’ to the best stats in the league. The L1 norm is convex and therefore a valid function to use in optimization. This approach gave us the objectively best team in terms of individual's stats. The lineup is displayed in Figure 4 and the selected players' L1 norm are compared to the L1 norm of the non-selected players in the scatter plot.
@@ -191,7 +193,9 @@ This approach is simply the L1 norm of players ‘distance’ to the best stats 
 
 ## Comparison of Selected vs Non-selected Players
 
-Scatter plot examples:
+Among the $3$ output rosters of the approaches, we attempted to choose the best roster to analyze the results. While approach $3$ gave us the objectively best player stats, we ruled out the team because the players are mostly high-valued and have high transfer fees. While the total salary is still under the salary cap, it would be unrealistic to recruit all the players from their current team. The other two approaches return more realistic results, and we chose the result with higher average stats. With player efficiency rating (PER) as the objective, we obtained the optimal team of $15$ players. The selected players are compared to the other players to understand what stats have the most effects on the results. 
+
+In the scatter plots, we plot each stat against salary and see how the selected players compare to the other players.  In the scatter plots of rebounds, points, offensive rating, and defensive rating, we see that most of the selected players lie on the higher spectrum in terms of the stats when compared to the rest of the league. This means that rebounds, points, offensive rating, and defensive rating are prioritized in the calculation of PER. This characteristic is not evident in the plots of blocks, assists, and steals, and the chosen players are on the lower spectrum.  In the NBA, players generally have low blocks, assists, and steals, and due to the scale of the stats, the selected players appear on the lower spectrum relative to the other players. If we look at the difference between the selected players and the rest, it is not as significant as that in rebounds, points, offensive rating, and defensive rating. The scatter plots also show a mix of players with low and high salary, and this is expected due to the salary cap in the constraints. The algorithm essentially chose the player combination with the highest stats while keeping the salary low.
 
 ![Points vs Salary](photos/1.png)
 ![Defensive Rating vs Salary](photos/2.png)
