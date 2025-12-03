@@ -176,6 +176,7 @@ PER is computed as:
 In our second approach, we chose an objective function which maximized the ‘Player Efficiency Rating’ of each player. The PER is calculated as a 
 
 $$ \sum {(\text{Positive contributions}) - (\text{Negative Contributions})} $$ 
+$$ 1 + 1 = 2 $$
 
 and returns a per minute rating of the players performance. An example of a positive contribution is points, assists, rebounds. Negative contributions are shown in stats like missed shots, turnovers, fouls, etc. The Player Efficiency Rating statistic was created by ESPN columnist John Hollinger. A larger breakdown of how this is calculated can be seen at \cite{per}. The objective function is as follows:
 $$\text{Max } (\textbf{PER})^T \mathbf{x} \text{ with the constraint } A\mathbf{x}\geq b$$ using the constraints mentioned in equation (1).
@@ -245,6 +246,4 @@ Basketball defense is difficult to quantify because steals and blocks are rare. 
 ---
 
 ## References
-
-(Your bibliography would render here using `biblatex`—Markdown cannot auto-generate a bibliography.)
 
