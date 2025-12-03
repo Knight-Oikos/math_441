@@ -1,4 +1,4 @@
-# Finding the Fantasy Team
+   # Finding the Fantasy Team
 **Group 7: Liam A., Jashan B., James W., Yao W.**  
 **March 2025**
 
@@ -30,7 +30,7 @@ The problem at hand is a twist on the classic knapsack problem.
 \sum_i w_i x_i \le C
 ```
 
-Where $v_i$ is the value of item \(i\), \(x_i\) indicates whether item \(i\) is chosen or not, \(w_i\) is the weight of item \(i\) and \(C\) is the maximum weight that the knapsack can hold.
+Where $v_i$ is the value of item $i$, $x_i$ indicates whether item $i$ is chosen or not, $w_i$ is the weight of item $i$ and $C$ is the maximum weight that the knapsack can hold.\\
 
 Instead of packing the most valuable items in the knapsack, the optimal NBA team would amalgamate players to build the best performing team. Team performance has to be quantified by some metric. In this project, team performance was chosen to be quantified three different ways:
 
@@ -74,15 +74,15 @@ In general, the problems will be modelled as a twist of the classical knapsack p
 
 For the programs formulated, these are some key variables that will be used:
 
-- \(v_i\) represents the quantified value that player \(i\) brings.  
-- \(x_i\) is the decision variable (0 or 1).  
-- \(\mathbf{A}\) is a matrix of statistical measures.  
-- \(b_i\) is the minimum statistical requirement for each stat.  
-- \(w_i\) represents each player's salary.  
-- \(\alpha\) represents a varying scalar applied to offensive rating.  
-- \(\beta\) represents a varying scalar applied to defensive rating.  
+- $v_i$ represents the quantified value that player $i$ brings.  
+- $x_i$ is the decision variable (0 or 1).  
+- $\mathbf{A}$ is a matrix of statistical measures.  
+- $b_i$ is the minimum statistical requirement for each stat.  
+- $w_i$ represents each player's salary.  
+- $\alpha$ represents a varying scalar applied to offensive rating.  
+- $\beta$ represents a varying scalar applied to defensive rating.  
 
-\(\alpha\) and \(\beta\) are parameters in the objective function to adjust weights of offensive and defensive rating.
+$\alpha$ and $\beta$ are parameters in the objective function to adjust weights of offensive and defensive rating.
 
 ---
 
@@ -165,7 +165,7 @@ Objective:
 \text{Max } (\textbf{Net Rating})^T x
 ```
 
-with constraints \(A x \ge b\).
+with constraints $A x \ge b$.
 
 This approach produced the following roster:
 
