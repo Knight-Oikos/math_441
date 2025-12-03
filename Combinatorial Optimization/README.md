@@ -18,7 +18,7 @@ The weakest team was generated from maximizing the roster’s Net Rating (Offens
 
 The problem at hand is a twist on the classic knapsack problem.
 
-```
+```math
 \text{max } \sum_i v_i x_i
 ```
 
@@ -154,7 +154,10 @@ We also added constraints to ensure the roster had at least 14 players and at mo
 ## Approach 1: Maximize Net Rating (ORTG − DRTG)
 
 In the first approach, we chose an objective function which maximized the ‘Net Rating’ of each player. The Net Rating is calculated by subtracting the defensive rating from the offensive rating. Offensive Rating and Defensive Ratings are a complex statistic first defined by statistician Dean Oliver. The breakdown of the calculation can be seen at \cite{odratings}.  Plainly put, Offensive Rating is a measure of how many points is a player likely to generate over 100 possessions. Defensive Rating is a measure of how many points the player allows the opposition to score per 100 possessions. This is why Net Rating is calculated as $Offensive - Defensive$. The greater the difference between points scored and points allowed, the better that player is. The objective function was therefore:
-$$\text{Max } (\textbf{Net Rating})^T \mathbf{x} \text{ with the constraint } A\mathbf{x}\geq b$$ 
+
+```math
+\text{Max } (\textbf{Net Rating})^T \mathbf{x} \text{ with the constraint } A\mathbf{x}\geq b
+```
 
 using the constraints mentioned in equation (1).
 This approach gave us the following roster.
@@ -167,17 +170,13 @@ This approach gave us the following roster.
 
 PER is computed as:
 
-```math
-\sum (\text{Positive Contributions}) - (\text{Negative Contributions})
-```
+In our second approach, we chose an objective function which maximized the ‘Player Efficiency Rating’ of each player. The PER is calculated as a 
 
-Objective:
+$$ \sum {(\text{Positive contributions}) - (\text{Negative Contributions})} $$ 
 
-```math
-\text{Max } (\textbf{PER})^T x
-```
-
-This approach produced the following roster:
+and returns a per minute rating of the players performance. An example of a positive contribution is points, assists, rebounds. Negative contributions are shown in stats like missed shots, turnovers, fouls, etc. The Player Efficiency Rating statistic was created by ESPN columnist John Hollinger. A larger breakdown of how this is calculated can be seen at \cite{per}. The objective function is as follows:
+$$\text{Max } (\textbf{PER})^T \mathbf{x} \text{ with the constraint } A\mathbf{x}\geq b$$ using the constraints mentioned in equation (1).
+This approach gave us the following roster.
 
 ![PER Results](photos/per.png)
 
