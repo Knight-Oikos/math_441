@@ -176,20 +176,13 @@ This approach gave us the following roster.
 
 ## Approach 3: Minimize Distance to Best in the League
 
-League leaders:
+The third approach was one uniquely created by us. The best players in the league for a given statistic are awarded at the end of the season. In the 2022-2023 season, Joel Embiid was the points leader with 33.1 points per game. Damonta Sabonis led the league with 12.3 rebounds per game. James Harden was the assists leader with 10.7 assists per game. Lastly, Nikola Jokic, an MVP calibre player, was the league leader in win shares with 14.9 win shares per game. Win shares is defined as a measure of a player's individual contribution to his team's wins \cite{winshares}. The objective function minimizes the absolute difference between the chosen players stats compared to the league leaders. The weight of the individual stat is equal since we are looking for the most balanced players and avoid the extreme cases where players only scores and does not defend for example. The objective function is defined as follows:
 
-- PTS: 33.1 (Embiid)
-- REB: 12.3 (Sabonis)
-- AST: 10.7 (Harden)
-- WS: 14.9 (Jokic)
+$$\text{Min } (|33.1 - PTS| + |12.3 - REB| + |10.7 - AST| + |14.9 - WS|)^T \mathbf{x} $$
+$$\text{ with the constraint } A\mathbf{x}\geq b$$ 
+using the constraints mentioned in equation (1).
 
-Objective:
-
-$$
-\text{Min } \left( |33.1 - PTS| + |12.3 - REB| + |10.7 - AST| + |14.9 - WS| \right)^T x
-$$
-
-This produced the strongest (but unrealistic) roster:
+This approach is simply the L1 norm of players ‘distance’ to the best stats in the league. The L1 norm is convex and therefore a valid function to use in optimization. This approach gave us the objectively best team in terms of individual's stats. The lineup is displayed in Figure 4 and the selected players' L1 norm are compared to the L1 norm of the non-selected players in the scatter plot.
 
 ![Selected Players](photos/table%20of%20selected.png)
 ![Scatter Plot](photos/scatter%20plot%20of%20selected.png)
