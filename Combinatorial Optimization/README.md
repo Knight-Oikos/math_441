@@ -18,6 +18,10 @@ The weakest team was generated from maximizing the roster’s Net Rating (Offens
 
 The problem at hand is a twist on the classic knapsack problem.
 
+$$ \text{max } \sum_i v_i x_i 
+\text{subject to}
+\sum_i w_i x_i \le C $$
+
 ```math
 \text{max } \sum_i v_i x_i
 ```
