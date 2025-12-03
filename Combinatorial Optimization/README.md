@@ -30,7 +30,7 @@ The problem at hand is a twist on the classic knapsack problem.
 \sum_i w_i x_i \le C
 ```
 
-Where $v_i$ is the value of item $i$, $x_i$ indicates whether item $i$ is chosen or not, $w_i$ is the weight of item $i$ and $C$ is the maximum weight that the knapsack can hold.\\
+Where $v_i$ is the value of item $i$, $x_i$ indicates whether item $i$ is chosen or not, $w_i$ is the weight of item $i$ and $C$ is the maximum weight that the knapsack can hold.
 
 Instead of packing the most valuable items in the knapsack, the optimal NBA team would amalgamate players to build the best performing team. Team performance has to be quantified by some metric. In this project, team performance was chosen to be quantified three different ways:
 
@@ -91,19 +91,11 @@ $\alpha$ and $\beta$ are parameters in the objective function to adjust weights 
 ### Preprocessing the Data
 
 All data collection was done through  
-`[cite: data]` for the player stats. The stats collected were: PTS, REB, AST, STL, BLK, ORTG, DRTG, WS.
+`[cite: data]` for the player stats. The stats collected were:   Points `PTS`, Rebounds `REB`, Assists `AST`, Steals `STL`, Blocks `BLK`, Offensive Rating `ORTG`, Defensive Rating `DRTG`, Win Shares `WS`.
 
-Players who played fewer than 58 games or fewer than 5 minutes per game were removed. This reduced the dataset from 537 players to 245 players.
+Then, we needed to collect the stats which would help narrow our selection set, particularly because some players who have only played a handful of games or even a few minutes would have very high offensive rating. One such player was Braxton Key who had an ORTG of 227. To put into perspective how high this is, the MVP of that season, Joel Embiid had an ORTG of 124. This was because Braxton Key had only played 9 minutes in the entire season across 3 games and did not miss a shot during those 9 minutes. He also only attempted 5 shots that season. Therefore, we restricted our dataset to players who had played at least 58 games that season, which is also the league minimum to be considered for league leader in a stat. Similarly, we restricted the minutes played per game to above 5 minutes which is approximately 10\% of a 48 minute game. This took our data set of 537 players down to 245 players.
 
-We then collected data from the last 20 championship rosters (2003–2023) to compute ideal stat thresholds:
-
-- **110.8 Points**  
-- **25.3 Assists**  
-- **45.6 Rebounds**  
-- **8.5 Steals**  
-- **5.8 Blocks**
-
-These thresholds ensured our chosen rosters remained balanced and realistic.
+Finally, the other set of data we needed to collect was a stat breakdown of a “good” team. We did so by looking at the championship rosters over a 20 year span from 2003-2023. The stats for each winning roster was simply a sum of each stat from each player on the roster. For example, to get the points per game of a winning team we would simply sum the points per game of each player on the roster. We then averaged out those sums over the 20 winning teams to get an “ideal stat threshold” of $110.8~Points, 25.3~Assists, 45.6~Rebounds, 8.5~Steals, and ~5.8~Blocks$ all of which were the per game stats. This collection of “ideal stats” to use as a threshold constraint was necessary because, as mentioned above, certain players could still have high Offensive Rating or Player Efficiency while not having high stats. This threshold ensures that our overall team maintains a high collection of stats. More importantly, this constraint will ensure that we have a balanced roster which does not over prioritize a given stat. For example, without this threshold we could get a team of very offensive players that gives us an incredibly high points per game value but they could all have very low assists. This would mean the team wouldn’t be likely to actually get that many points because the players selected would not be ones that typically share the ball.
 
 ---
 
