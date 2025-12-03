@@ -18,9 +18,9 @@ The weakest team was generated from maximizing the roster’s Net Rating (Offens
 
 The problem at hand is a twist on the classic knapsack problem.
 
-\begin{equation}
-     \text{Maximize} \quad & (v^Tx) \\ \text{subject to the conditions:} \quad & a_{11}x_1 + a_{12}x_2 + \dots + a_{1n}x_n \geq 110.8\; Points, \\ & a_{21}x_1 + a_{22}x_2 + \dots + a_{2n}x_n \geq 25.3 \;Assists, \\ & a_{31}x_1 + a_{32}x_2 + \dots + a_{3n}x_n \geq 45.6\; Rebounds, \\  & a_{41}x_1 + a_{42}x_2 + \dots + a_{4n}x_n \geq 8.5\; Steals, \\ & a_{51}x_1 + a_{52}x_2 + \dots + a_{5n}x_n \geq 5.8\; Blocks,\\ & a_{61}x_1 + a_{62}x_2 + \dots + a_{6n}x_n \leq 136,021,000\; Salary Cap,\\ & x_1, x_2, \dots,x_n \in {0,1}
-\end{equation}
+$$ \text{max } \sum_i v_i x_i $$
+$$ \text{subject to} $$
+$$ \sum_i w_i x_i \le C $$
 
 ```math
 \text{max } \sum_i v_i x_i
