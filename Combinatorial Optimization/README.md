@@ -55,13 +55,13 @@ $$
 \text{subject to}
 $$
 
-```math
+$$
 \sum_i w_i x_i \le C
-```
+$$
 
-```math
+$$
 \mathbf{A}x \ge b
-```
+$$
 
 For the programs formulated, these are some key variables that will be used:
 
@@ -102,40 +102,37 @@ all of which were the per game stats. This collection of “ideal stats” to us
 
 All three of our models had the exact same constraints according to the following equations. In the objective function $v^T$ represents our value coefficient which differs for each of the 3 approaches.
 
-
-$$ \quad & (v^Tx) \\ \text{subject to the conditions:} \quad & a_{11}x_1 + a_{12}x_2 + \dots + a_{1n}x_n \geq 110.8\; Points, \\ & a_{21}x_1 + a_{22}x_2 + \dots + a_{2n}x_n \geq 25.3 \;Assists, \\ & a_{31}x_1 + a_{32}x_2 + \dots + a_{3n}x_n \geq 45.6\; Rebounds, \\  & a_{41}x_1 + a_{42}x_2 + \dots + a_{4n}x_n \geq 8.5\; Steals, \\ & a_{51}x_1 + a_{52}x_2 + \dots + a_{5n}x_n \geq 5.8\; Blocks,\\ & a_{61}x_1 + a_{62}x_2 + \dots + a_{6n}x_n \leq 136,021,000\; Salary Cap,\\ & x_1, x_2, \dots,x_n \in {0,1} $$
-
-```math
+$$
 \text{Maximize } (v^T x)
-```
+$$
 
-```math
+$$
 a_{11}x_1 + \dots + a_{1n}x_n \ge 110.8 \text{ Points}
-```
+$$
 
-```math
+$$
 a_{21}x_1 + \dots + a_{2n}x_n \ge 25.3 \text{ Assists}
-```
+$$
 
-```math
+$$
 a_{31}x_1 + \dots + a_{3n}x_n \ge 45.6 \text{ Rebounds}
-```
+$$
 
-```math
+$$
 a_{41}x_1 + \dots + a_{4n}x_n \ge 8.5 \text{ Steals}
-```
+$$
 
-```math
+$$
 a_{51}x_1 + \dots + a_{5n}x_n \ge 5.8 \text{ Blocks}
-```
+$$
 
-```math
+$$
 a_{61}x_1 + \dots + a_{6n}x_n \le 136{,}021{,}000 \text{ Salary Cap}
-```
+$$
 
-```math
+$$
 x_i \in \{0,1\}
-```
+$$
 
 We also added constraints to ensure the roster had at least 14 players and at most 15 players according to the NBA restrictions on roster size. In addition to this, we limited the choices to have at least two players from each position: 
 
@@ -149,9 +146,9 @@ We also added constraints to ensure the roster had at least 14 players and at mo
 
 In the first approach, we chose an objective function which maximized the ‘Net Rating’ of each player. The Net Rating is calculated by subtracting the defensive rating from the offensive rating. Offensive Rating and Defensive Ratings are a complex statistic first defined by statistician Dean Oliver. The breakdown of the calculation can be seen at \cite{odratings}.  Plainly put, Offensive Rating is a measure of how many points is a player likely to generate over 100 possessions. Defensive Rating is a measure of how many points the player allows the opposition to score per 100 possessions. This is why Net Rating is calculated as $Offensive - Defensive$. The greater the difference between points scored and points allowed, the better that player is. The objective function was therefore:
 
-```math
+$$
 \text{Max } (\textbf{Net Rating})^T \mathbf{x} \text{ with the constraint } A\mathbf{x}\geq b
-```
+$$
 
 using the constraints mentioned in equation (1).
 This approach gave us the following roster.
@@ -188,9 +185,9 @@ League leaders:
 
 Objective:
 
-```math
+$$
 \text{Min } \left( |33.1 - PTS| + |12.3 - REB| + |10.7 - AST| + |14.9 - WS| \right)^T x
-```
+$$
 
 This produced the strongest (but unrealistic) roster:
 
