@@ -22,18 +22,6 @@ $$ \text{max } \sum_i v_i x_i $$
 $$ \text{subject to} $$
 $$ \sum_i w_i x_i \le C $$
 
-```math
-\text{max } \sum_i v_i x_i
-```
-
-```math
-\text{subject to}
-```
-
-```math
-\sum_i w_i x_i \le C
-```
-
 Where $v_i$ is the value of item $i$, $x_i$ indicates whether item $i$ is chosen or not, $w_i$ is the weight of item $i$ and $C$ is the maximum weight that the knapsack can hold.
 
 Instead of packing the most valuable items in the knapsack, the optimal NBA team would amalgamate players to build the best performing team. Team performance has to be quantified by some metric. In this project, team performance was chosen to be quantified three different ways:
@@ -60,13 +48,12 @@ Another constraint would be average performance statistics. To select an optimal
 
 In general, the problems will be modelled as a twist of the classical knapsack problem:
 
-```math
-\text{max } \sum_i v_i x_i
-```
 
-```math
+$$ \text{max } \sum_i v_i x_i $$
+
+$$
 \text{subject to}
-```
+$$
 
 ```math
 \sum_i w_i x_i \le C
