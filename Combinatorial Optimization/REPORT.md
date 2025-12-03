@@ -205,7 +205,7 @@ In the scatter plots, we plot each stat against salary and see how the selected 
 
 ![Steals vs Salary](photos/5.png)
 
-Average stats comparison:
+In the bar plots, we compare the average stats of the selected team with the non-selected players. In every stat other than defensive rating, the average of the selected players is higher. Since a defensive rating indicates the player is good defensively, the results are aligned with our goal of optimizing the stats of the players.
 
 ![Ratings](photos/8.png)
 ![More stats](photos/7.png)
@@ -214,21 +214,52 @@ Average stats comparison:
 
 ## Conclusion and Future Considerations
 
-Overall, the league-leaders (Approach 3) team is unrealistic due to contract restrictions, despite being statistically optimal.
-
-Between the Net Rating team and PER team, the choice is subjective. The Net Rating team resembles real NBA construction more closely, while the PER team contains four All-Stars, which is less common historically.
+In conclusion, due to the unrealistically high star calibre of the league leaders team we will disregard that solution. Although it is important to note that it is objectively the best team using the calculable metrics of Points, Assists, Rebounds, and Win Shares which the league tracks over the season. The players chosen for that roster are the closest to a combination of the highest stats in the league. This leaves us with the choice of the Net Rating team and the PER team. At this point the choice is purely due to preference and coaching style because the rosters are both objectively good with a combination of star players and role players. The Net Rating team is perhaps more realistic from a visual inspection of the stats of each player along with having only $2$ All-Star calibre players in Shai-Gilgeous Alexander and Jimmy Butler. In comparison the PER team has $4$ All-Stars: Damian Lillard, Nikola Jokic, Ja Morant, and Joel Embiid. In the 20 year span of historic data that we collected from 2003-2023 only $5$ teams had $4$ All-Stars while no team in NBA history has had $5$ or more. Therefore, the PER team is not entirely unrealistic but it is much more likely to build a competitive and realistic roster through trades and free agency in the current NBA using the Net Rating Team.
 
 ---
 
 ## Future Considerations
 
-Basketball defense is difficult to quantify because steals and blocks are rare. Future improvements may include:
+This project has only reaffirmed that it is a challenge to properly formulate a quantifiable metric asserting the value of a player with which teams can build a realistically attainable championship roster. In particular, the game of basketball suffers from a lack of defensive stat collection. This is because the two main quantifiable defensive stats - Block and Steals - are too rare to reliably use as a defensive metric. Typically defensive prowess is attributed to a team rather than a player. This is also because of the many different methods of defending like Man to Man and Zone defense in which a player is responsible for an area of the court. A possible option to consider is physical traits such as height and strength of the player as a defensive metric. Taller players are typically able to stop shots more reliably due to their size, while stronger players are able to hold off offensive players easier. The reason offensive stats work much better is because in basketball regardless of the team’s rotations and style of play, only an individual player can score the basketball at the end of the play. There are many factors to consider and so for future iterations of this project there are the following recommendations:
 
-- Using more stats (e.g., shot percentage, attempts, 3PT shooting)  
-- Using machine learning to create new player-value metrics  
-- Including chemistry-based objective functions depending on combinations of playstyles  
+- Use more stats such as shot percentage, shots attempted, or even account for the preference of 3 point shots as being more valuable if the player can score them reliably.
+- Perform data analysis using machine learning to identify patterns and come up with a unique metric for valuing a player. This would allow for a much more unique objective function and perhaps give more realistic teams
+- Consider an objective function in which the choice of a player depends on other players. A possible method is to separate players by identifiable playing styles and define functions which display a team chemistry value depending on which playing styles are on the same roster.
+
+There are a multitude of different methods to formulate this problem which is why it is such an interesting topic that fans love to discuss.
 
 ---
 
 ## References
 
+@online{data,
+  author = {Basketball Reference},
+  title = {Basketball Reference: NBA Stats and History},
+  year = {2025},
+  url = {https://www.basketball-reference.com},
+  urldate = {2025-04-02}
+}
+
+@online{odratings,
+  author = {Basketball Reference},
+  title = {Calculating Individual Offensive and Defensive Ratings},
+  year = {2025},
+  url = {https://www.basketball-reference.com/about/ratings.html},
+  urldate = {2025-04-02}
+}
+
+@online{per,
+  author = {Basketball Reference},
+  title = {Calculating PER},
+  year = {2025},
+  url = {https://www.basketball-reference.com//about/per.html},
+  urldate = {2025-04-02}
+}
+
+@online{winshares,
+  author = {Basketball Reference},
+  title = {NBA Win Shares},
+  year = {2025},
+  url = {https://www.basketball-reference.com/about/ws.html},
+  urldate = {2025-04-02}
+}
