@@ -18,7 +18,7 @@ The weakest team was generated from maximizing the roster’s Net Rating (Offens
 
 The problem at hand is a twist on the classic knapsack problem.
 
-```math
+```
 \text{max } \sum_i v_i x_i
 ```
 
@@ -109,7 +109,7 @@ all of which were the per game stats. This collection of “ideal stats” to us
 
 ### Setting Up the Model
 
-All three models share the same constraints:
+All three of our models had the exact same constraints according to the following equations. In the objective function $v^T$ represents our value coefficient which differs for each of the 3 approaches.
 
 ```math
 \text{Maximize } (v^T x)
@@ -143,11 +143,7 @@ a_{61}x_1 + \dots + a_{6n}x_n \le 136{,}021{,}000 \text{ Salary Cap}
 x_i \in \{0,1\}
 ```
 
-Roster constraints:
-
-- At least **14 players**  
-- At most **15 players**  
-- At least **2 players per position**  
+We also added constraints to ensure the roster had at least 14 players and at most 15 players according to the NBA restrictions on roster size. In addition to this, we limited the choices to have at least two players from each position: 
 
 ### Player positions
 
@@ -157,17 +153,11 @@ Roster constraints:
 
 ## Approach 1: Maximize Net Rating (ORTG − DRTG)
 
-Offensive and Defensive Ratings are advanced metrics developed by Dean Oliver.
+In the first approach, we chose an objective function which maximized the ‘Net Rating’ of each player. The Net Rating is calculated by subtracting the defensive rating from the offensive rating. Offensive Rating and Defensive Ratings are a complex statistic first defined by statistician Dean Oliver. The breakdown of the calculation can be seen at \cite{odratings}.  Plainly put, Offensive Rating is a measure of how many points is a player likely to generate over 100 possessions. Defensive Rating is a measure of how many points the player allows the opposition to score per 100 possessions. This is why Net Rating is calculated as $Offensive - Defensive$. The greater the difference between points scored and points allowed, the better that player is. The objective function was therefore:
+$$\text{Max } (\textbf{Net Rating})^T \mathbf{x} \text{ with the constraint } A\mathbf{x}\geq b$$ 
 
-Objective:
-
-```math
-\text{Max } (\textbf{Net Rating})^T x
-```
-
-with constraints $A x \ge b$.
-
-This approach produced the following roster:
+using the constraints mentioned in equation (1).
+This approach gave us the following roster.
 
 ![Net Rating Results](photos/net_rating.png)
 
