@@ -137,7 +137,7 @@ We also added constraints to ensure the roster had at least 14 players and at mo
 
 ### Player positions
 
-![Player positions](photos/player_pos.png)
+![Player positions](Combinatorial Optimization/photos/player_pos.png)
 
 ---
 
@@ -152,7 +152,7 @@ $$
 using the constraints mentioned in equation (1).
 This approach gave us the following roster.
 
-![Net Rating Results](photos/net_rating.png)
+![Net Rating Results](Combinatorial Optimization/photos/net_rating.png)
 
 ---
 
@@ -169,7 +169,7 @@ and returns a per minute rating of the players performance. An example of a posi
 $$\text{Max } (\textbf{PER})^T \mathbf{x} \text{ with the constraint } A\mathbf{x}\geq b$$ using the constraints mentioned in equation (1).
 This approach gave us the following roster.
 
-![PER Results](photos/per.png)
+![PER Results](Combinatorial Optimization/photos/per.png)
 
 ---
 
@@ -185,8 +185,8 @@ using the constraints mentioned in equation (1).
 
 This approach is simply the L1 norm of players ‘distance’ to the best stats in the league. The L1 norm is convex and therefore a valid function to use in optimization. This approach gave us the objectively best team in terms of individual's stats. The lineup is displayed in Figure 4 and the selected players' L1 norm are compared to the L1 norm of the non-selected players in the scatter plot.
 
-![Selected Players](photos/table%20of%20selected.png)
-![Scatter Plot](photos/scatter%20plot%20of%20selected.png)
+![Selected Players](Combinatorial Optimization/photos/table%20of%20selected.png)
+![Scatter Plot](Combinatorial Optimization/photos/scatter%20plot%20of%20selected.png)
 
 ---
 
@@ -196,18 +196,18 @@ Among the $3$ output rosters of the approaches, we attempted to choose the best 
 
 In the scatter plots, we plot each stat against salary and see how the selected players compare to the other players.  In the scatter plots of rebounds, points, offensive rating, and defensive rating, we see that most of the selected players lie on the higher spectrum in terms of the stats when compared to the rest of the league. This means that rebounds, points, offensive rating, and defensive rating are prioritized in the calculation of PER. This characteristic is not evident in the plots of blocks, assists, and steals, and the chosen players are on the lower spectrum.  In the NBA, players generally have low blocks, assists, and steals, and due to the scale of the stats, the selected players appear on the lower spectrum relative to the other players. If we look at the difference between the selected players and the rest, it is not as significant as that in rebounds, points, offensive rating, and defensive rating. The scatter plots also show a mix of players with low and high salary, and this is expected due to the salary cap in the constraints. The algorithm essentially chose the player combination with the highest stats while keeping the salary low.
 
-![Points vs Salary](photos/1.png)
-![Defensive Rating vs Salary](photos/2.png)
+![Points vs Salary](Combinatorial Optimization/photos/1.png)
+![Defensive Rating vs Salary](Combinatorial Optimization/photos/2.png)
 
-![Assists vs Salary](photos/3.png)
-![Offensive Rating vs Salary](photos/4.png)
+![Assists vs Salary](Combinatorial Optimization/photos/3.png)
+![Offensive Rating vs Salary](Combinatorial Optimization/photos/4.png)
 
-![Steals vs Salary](photos/5.png)
+![Steals vs Salary](Combinatorial Optimization/photos/5.png)
 
 In the bar plots, we compare the average stats of the selected team with the non-selected players. In every stat other than defensive rating, the average of the selected players is higher. Since a defensive rating indicates the player is good defensively, the results are aligned with our goal of optimizing the stats of the players.
 
-![Ratings](photos/8.png)
-![More stats](photos/7.png)
+![Ratings](Combinatorial Optimization/photos/8.png)
+![More stats](Combinatorial Optimization/photos/7.png)
 
 ---
 
