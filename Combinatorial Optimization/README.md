@@ -1,8 +1,7 @@
    # Finding the Fantasy Team
 **Group 7: Liam A., Jashan B., James W., Yao W.**  
 **March 2025**
-
-Link to Latex File: https://www.overleaf.com/read/cpxqrpkdpnhs#94a8d2
+**Link to Latex File: https://www.overleaf.com/read/cpxqrpkdpnhs#94a8d2**
 ---
 
 ## Introduction
