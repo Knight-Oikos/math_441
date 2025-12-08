@@ -1,9 +1,8 @@
-   # Finding the Fantasy Team
+# Finding the Fantasy Team
 **Group 7: Liam A., Jashan B., James W., Yao W.**  
 **March 2025**
-**Link to Latex File: https://www.overleaf.com/read/cpxqrpkdpnhs#94a8d2**
 ---
-
+Link to Latex File: https://www.overleaf.com/read/cpxqrpkdpnhs#94a8d2
 ## Introduction
 
 The National Basketball Association, known as the NBA, is the most watched basketball league in the world, with millions of fans tuning in to support their favourite teams every season. One of the most common conversations among fans is who they would like to add to their team if they were the general manager. Lots of fans will often feel they can run their team much better and win a championship. We set out to try and answer that question of which players to choose as a GM to make the best team in the NBA. We did this with the help of combinatorial optimization by framing roster choice as a 0-1 packing problem. 
