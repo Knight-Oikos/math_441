@@ -137,7 +137,7 @@ We also added constraints to ensure the roster had at least 14 players and at mo
 
 ### Player positions
 
-![Player positions](/Combinatorial Optimization/photos/player_pos.png)
+![Player positions](Combinatorial_Optimization/photos/player_pos.png)
 
 ---
 
